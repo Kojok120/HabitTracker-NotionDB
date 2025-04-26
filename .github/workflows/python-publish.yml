@@ -2,8 +2,10 @@ name: Send Daily Notion Report to Discord
 
 on:
   schedule:
-    - cron: "0 9 * * *" # JST 18:00 = UTC 9:00
-  workflow_dispatch: # 手動実行も可能にする
+    schedule:
+      - cron: "0 9 * * *" # JST 18:00 = UTC 9:00
+      - cron: "0 21 * * *" # JST 6:00 = UTC 21:00
+    workflow_dispatch: # 手動実行も可能にする workflow_dispatch: # 手動実行も可能にする
 
 jobs:
   send_report:
@@ -27,7 +29,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
-          DISCORD_SPANISH_WEBHOOK_URL: ${{ secrets.DISCORD_SPANISH_WEBHOOK_URL }}
-          DISCORD_KOREAN_WEBHOOK_URL: ${{ secrets.DISCORD_KOREAN_WEBHOOK_URL }}
+          DISCORD_SPANISH_WEBHOOK_URL: ${{ secrets.DISCORD_SPANISH_WEBHOOK }}
+          DISCORD_KOREAN_WEBHOOK_URL: ${{ secrets.DISCORD_KOREAN_WEBHOOK }}
 
         run: python main.py
