@@ -2,10 +2,9 @@ name: Send Daily Notion Report to Discord
 
 on:
   schedule:
-    schedule:
-      - cron: "0 9 * * *" # JST 18:00 = UTC 9:00
-      - cron: "0 21 * * *" # JST 6:00 = UTC 21:00
-    workflow_dispatch: # 手動実行も可能にする workflow_dispatch: # 手動実行も可能にする
+    - cron: "0 9 * * *" # JST 18:00 = UTC 9:00
+    - cron: "0 21 * * *" # JST 6:00 = UTC 21:00
+  workflow_dispatch: # 手動実行も可能にする workflow_dispatch: # 手動実行も可能にする
 
 jobs:
   send_report:
