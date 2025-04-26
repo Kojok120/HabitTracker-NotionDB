@@ -28,7 +28,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
-          DISCORD_SPANISH_WEBHOOK_URL: ${{ secrets.DISCORD_SPANISH_WEBHOOK }}
-          DISCORD_KOREAN_WEBHOOK_URL: ${{ secrets.DISCORD_KOREAN_WEBHOOK }}
+          DISCORD_SPANISH_WEBHOOK: ${{ secrets.DISCORD_SPANISH_WEBHOOK }}
+          DISCORD_KOREAN_WEBHOOK: ${{ secrets.DISCORD_KOREAN_WEBHOOK }}
 
         run: python main.py
